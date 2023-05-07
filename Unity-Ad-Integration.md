@@ -53,7 +53,7 @@ implementation 'com.unity3d.ads:unity-ads:4.7.0'
 </RelativeLayout>
 ```
 
-## activity_main.xml
+## MainActivity.java
 
 > _Just copy and paste it to your project (Modify if necessary)_
 #### **Required** 
