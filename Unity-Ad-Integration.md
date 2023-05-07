@@ -20,6 +20,17 @@
 implementation 'com.unity3d.ads:unity-ads:4.7.0'
 ```
 
+## AndroidManifest.xml
+> Uses Permissions
+ * Internet Permission
+ * Ad ID Permission
+     * in case targetSdk 33++
+
+```xml
+ <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+```
+
 ## activity_main.xml
 
 > _Just copy and paste it to your project (Modify if necessary)_
