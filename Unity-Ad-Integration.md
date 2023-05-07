@@ -5,6 +5,11 @@
 > Provider **Sabbir MMS**
 - BANNER AD
 - INTERSTITIAL VIDEO AD
+
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
+
 ## Output
 [<img src="https://cdn.discordapp.com/attachments/1104657948866773063/1104658590926635099/unity_M1.jpg"
      alt="Size Limit logo by Anton Lovchikov" width="256" height="512">] | 
