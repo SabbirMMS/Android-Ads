@@ -172,6 +172,7 @@ public class MainActivity extends AppCompatActivity implements IUnityAdsInitiali
 > Monjel Morshed Sabbir
 * Social Media
     * [Facebook](https://www.facebook.com/MonjelMorshedSabbir.MMS)
-    * [Instagram](https://www.facebook.com/MonjelMorshedSabbir.MMS)
-    * [Youtube](https://www.facebook.com/MonjelMorshedSabbir.MMS)
+    * [Instagram](https://www.instagram.com/sabbirmms/)
+    * [Youtube](https://www.youtube.com/@DeveloperMrMMS)
+    * [Linkedin](https://www.linkedin.com/in/sabbirmms/)
 # ![](https://cdn.discordapp.com/attachments/1104657948866773063/1104658590595301487/cover.jpg)
