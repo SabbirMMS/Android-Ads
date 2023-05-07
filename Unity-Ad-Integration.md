@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements IUnityAdsInitiali
     }
 }//End of public class
 ```
-## Credit for this docementation
+## Credit for this documentation
 > Monjel Morshed Sabbir
 * Social Media
     * [Facebook](https://www.facebook.com/MonjelMorshedSabbir.MMS)
