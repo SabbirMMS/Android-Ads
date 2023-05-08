@@ -7,10 +7,10 @@
 - INTERSTITIAL VIDEO AD
 
 ## Output
-[<img src="https://cdn.discordapp.com/attachments/1104657948866773063/1105050166253326429/1683534627692.jpg"
-     alt="Size Limit logo by Anton Lovchikov" width="256" height="512">] | 
+<img src="https://cdn.discordapp.com/attachments/1104657948866773063/1105050166253326429/1683534627692.jpg"
+     alt="Size Limit logo by Anton Lovchikov" width="256" height="512"> 
      <img src="https://cdn.discordapp.com/attachments/1104657948866773063/1105050166001680435/1683534627688.jpg"
-     alt="Size Limit logo by Anton Lovchikov" width="256" height="512">]
+     alt="Size Limit logo by Anton Lovchikov" width="256" height="512">
 
 ## Properties Setup
 > gradle.properties
