@@ -5,6 +5,9 @@
 > Provider **Sabbir MMS**
 - BANNER AD {Via XML & via programmactically-(commented)}
 - INTERSTITIAL VIDEO AD
+> Required
+*  ANDROID 9 or below device required for testing.
+*  Device AD id must be added as a test device.
 
 ## Output
 [<img src="https://cdn.discordapp.com/attachments/1104657948866773063/1109770332119777290/Screenshot_2023-05-21-15-09-29-399_com.mrmms.applovinchecking.jpg"
