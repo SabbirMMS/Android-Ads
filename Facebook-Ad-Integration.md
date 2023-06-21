@@ -5,11 +5,14 @@
 > Provider **Sabbir MMS**
 - BANNER AD
 - INTERSTITIAL VIDEO AD
+- REWARDED VIDEO AD (another activity)
 
 ## Output
 <img src="https://cdn.discordapp.com/attachments/1104657948866773063/1105050166253326429/1683534627692.jpg"
      alt="Size Limit logo by Anton Lovchikov" width="256" height="512"> 
      <img src="https://cdn.discordapp.com/attachments/1104657948866773063/1105050166001680435/1683534627688.jpg"
+     alt="Size Limit logo by Anton Lovchikov" width="256" height="512">
+     <img src="https://cdn.discordapp.com/attachments/1104657948866773063/1121062504378941490/Screenshot_2023-06-21-19-01-31-680_com.mms.testfbreward.jpg"
      alt="Size Limit logo by Anton Lovchikov" width="256" height="512">
 
 ## Properties Setup
@@ -185,6 +188,100 @@ public class MainActivity extends AppCompatActivity {
     }//On destroy method
 
 }//AppCompatActivity ends here
+```
+
+## Rewarded Video Ad 
+> Showing the ad auto after loaded
+
+> Must add unique test device ID from logcat to load test ad
+```java
+
+public class MainActivity extends AppCompatActivity {
+
+    private RewardedVideoAd rewardedVideoAd;
+    String TAG="null";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        findViewById(R.id.tvhello).setOnClickListener(v -> check());
+
+    }
+
+    private void check(){
+
+        // Initialize the Audience Network SDK
+        AudienceNetworkAds.initialize(this);
+        AdSettings.addTestDevice("08bc8bd5-2815-4842-a9b0-b68fa9011476");
+        AdSettings.addTestDevice("cee833d8-84d2-4242-8504-7edd585b11c7");
+        // Instantiate a RewardedVideoAd object.
+        // NOTE: the placement ID will eventually identify this as your App, you can ignore it for
+        // now, while you are testing and replace it later when you have signed up.
+        // While you are using this temporary code you will only get test ads and if you release
+        // your code like this to the Google Play your users will not receive ads (you will get
+        // a no fill error).
+        rewardedVideoAd = new RewardedVideoAd(this, "YOUR_PLACEMENT_ID");
+        RewardedVideoAdListener rewardedVideoAdListener = new RewardedVideoAdListener() {
+            @Override
+            public void onError(Ad ad, AdError error) {
+                // Rewarded video ad failed to load
+                Log.e(TAG, "Rewarded video ad failed to load: " + error.getErrorMessage());
+                Toast.makeText(getApplicationContext(), "Rewarded video ad failed to load: " + error.getErrorMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdLoaded(Ad ad) {
+                // Rewarded video ad is loaded and ready to be displayed
+                Log.d(TAG, "Rewarded video ad is loaded and ready to be displayed!");
+                Toast.makeText(getApplicationContext(), TAG, Toast.LENGTH_SHORT).show();
+                  //Showing the ad auto after loaded
+                rewardedVideoAd.show();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                // Rewarded video ad clicked
+                Log.d(TAG, "Rewarded video ad clicked!");
+                Toast.makeText(getApplicationContext(), TAG, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                // Rewarded Video ad impression - the event will fire when the
+                // video starts playing
+                Log.d(TAG, "Rewarded video ad impression logged!");
+                Toast.makeText(getApplicationContext(), TAG, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onRewardedVideoCompleted() {
+                // Rewarded Video View Complete - the video has been played to the end.
+                // You can use this event to initialize your reward
+                Log.d(TAG, "Rewarded video completed!");
+                Toast.makeText(getApplicationContext(), TAG, Toast.LENGTH_SHORT).show();
+
+                // Call method to give reward
+                // giveReward();
+            }
+
+            @Override
+            public void onRewardedVideoClosed() {
+                // The Rewarded Video ad was closed - this can occur during the video
+                // by closing the app, or closing the end card.
+                Log.d(TAG, "Rewarded video ad closed!");
+                Toast.makeText(getApplicationContext(), TAG, Toast.LENGTH_SHORT).show();
+            }
+        };
+        rewardedVideoAd.loadAd(
+                rewardedVideoAd.buildLoadAdConfig()
+                        .withAdListener(rewardedVideoAdListener)
+                        .build());
+
+    }
+
+}
 ```
 ### On Error - or Not Working
 * If test network is not working follow the steps below
